@@ -1,0 +1,35 @@
+package A;
+
+
+	
+	import java.io.FileNotFoundException;
+	import java.io.FileReader;
+	import java.io.FileWriter;
+	import java.io.IOException;
+	public class Tester {
+	
+		public static void main(String[] args) {
+		
+
+			@SuppressWarnings("unused")
+			long start = System.currentTimeMillis();
+			
+			try {
+				try (FileReader fr = new FileReader("/user/Desktop/13 ‎January ‎2022, ‏‎17:18:11.png")) {
+					FileWriter fw=new FileWriter("/user/Desktop/13 ‎January ‎2022, ‏‎17:18:11.png");
+					int i=0;
+					while((i=fr.read())!=-1) {
+						fw.write(i);
+					}
+					fw.close();
+				}
+				
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		
+			System.out.println("file is written");
+		}
+	}
